@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanye API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+
+
+   <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card my-3">
+                <div class="row g-0">
+                  <div class="col-md-4" id="user-img">
+                    
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title" id="user-name"></h5>
+                      <span id="user-intro"></span>
+                       <table class="w-100">
+                            <tbody>
+                                <tr>
+                                    <td>User ID</td>
+                                    <td>:</td>
+                                    <td id="user-id"></td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td>:</td>
+                                    <td id="user-gender"></td>
+                                </tr>
+                                <tr>
+                                    <td>Age</td>
+                                    <td>:</td>
+                                    <td id="user-age"></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone</td>
+                                    <td>:</td>
+                                    <td id="user-phone"></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td id="user-mail"></td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>:</td>
+                                    <td id="user-address"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card my-3">
+                <img id="flag" class="" alt="...">
+                <div class="card-body d-flex justify-content-between">
+                  <p id="country-name" class="card-text"></p>
+                  <p class="card-text">Cap: <span id="country-capital"></span></p>
+                </div>
+              </div>
+        </div>
+    </div>
+   </div>
+
+   <div class="container d-flex justify-content-center">
+    <button id="btn" type="button" class="btn btn-primary text-uppercase py-3 my-4 fs-1 fw-bold w-25 ">next</button>
+   </div>
+
+
+
+      <!-- javascript link -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="js/kanye.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/country.js"></script>
+</body>
+</html>
