@@ -10,6 +10,7 @@ loadMeals();
 const displayAllMeals = meals => {
     let allMeals = meals.meals;
     let mealsContainer = document.getElementById('meals-container');
+    mealsContainer.textContent = '';
     allMeals.forEach(meal => {
         let mealDisc = meal.strInstructions
         let mealDiv = document.createElement('div');
@@ -81,3 +82,22 @@ function displayMealDetails(meals){
     mealTags.innerText = `${meal.strTags}`
     console.log(meal);
 }
+
+
+// fetch meal by name
+
+document.getElementById('search-btn').addEventListener('click', function(){
+    let searchBox = document.getElementById('search-box');
+    let searchText = searchBox.value.toLowerCase();
+    // console.log(searchText);
+    loadMealsByName(searchText)
+    searchBox.value = '';
+})
+
+const loadMealsByName = mealName => {
+    let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
+    fetch(url)
+    .then(ref => ref.json())
+    .then(data => displayAllMeals(data))
+}
+
