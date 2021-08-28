@@ -24,6 +24,7 @@ const displayAllMeals = meals => {
                 <div class="card-body">
                     <h5 class="card-title">${meal.strMeal}</h5>
                     <p class="card-text">${mealDisc.slice(0, 125)}</p>
+                    <button class="btn btn-outline-warning fw-bolder">Learn More</button>
                 </div>
             </div>
         `
