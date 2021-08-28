@@ -4,10 +4,12 @@
    .then(data => displayUser(data))
  }
 
- document.getElementById('btn').addEventListener('click',function(){
+ loaduser();
+ 
+ function changeUser(){
    loaduser();
    loadQuote();
- })
+ }
  
 
  const displayUser = data => {
@@ -43,7 +45,6 @@
 
    loadCountry(user[0].location.country);
    
-    console.log(user[0].cell);
  }
 
 
@@ -64,7 +65,6 @@ const displayCountry = countryName => {
 
    const countryCapital= document.getElementById('country-capital');
    countryCapital.innerText = `${countryName[0].capital}`
-   console.log(countryName[0]);
 }
 
 const loadQuote = () => {
@@ -78,3 +78,5 @@ const loadQuote = () => {
 const displayQuote = quote => {
    document.getElementById('user-intro').innerText = `${quote.quote}`
 }
+
+loadQuote();
