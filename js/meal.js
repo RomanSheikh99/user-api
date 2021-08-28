@@ -75,5 +75,9 @@ function displayMealDetails(meals){
     mealIngredient8.innerText = `${meal.strIngredient8}`
     mealIngredient9.innerText = `${meal.strIngredient9}`
     mealIngredient10.innerText = `${meal.strIngredient10}`
+    let mealInstructions = document.getElementById('meal-Instructions');
+    mealInstructions.innerText = `${meal.strInstructions}`
+    let mealTags = document.getElementById('meal-tags');
+    mealTags.innerText = `${meal.strTags}`
     console.log(meal);
 }
