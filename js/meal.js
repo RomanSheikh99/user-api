@@ -48,10 +48,32 @@ function displayMealDetails(meals){
     mealTutorial.setAttribute('href',`${meal.strYoutube}`)
     let mealArea = document.getElementById('meal-area');
     mealArea.innerHTML = `
-       <span cl>${meal.strMeal}</span>
+       <span class="fw-bold">${meal.strMeal}</span>
         is an 
-        <span class="text-warning">${meal.strArea}</span>
+        <span class="text-warning fw-bolder">${meal.strArea}</span>
         Food.
     `
+    let mealCategory = document.getElementById('meal-category');
+    mealCategory.innerText = `${meal.strCategory}`
+    let mealIngredient1 = document.getElementById('meal-ingredient-1');
+    let mealIngredient2 = document.getElementById('meal-ingredient-2');
+    let mealIngredient3 = document.getElementById('meal-ingredient-3');
+    let mealIngredient4 = document.getElementById('meal-ingredient-4');
+    let mealIngredient5 = document.getElementById('meal-ingredient-5');
+    let mealIngredient6 = document.getElementById('meal-ingredient-6');
+    let mealIngredient7 = document.getElementById('meal-ingredient-7');
+    let mealIngredient8 = document.getElementById('meal-ingredient-8');
+    let mealIngredient9 = document.getElementById('meal-ingredient-9');
+    let mealIngredient10 = document.getElementById('meal-ingredient-10');
+    mealIngredient1.innerText = `${meal.strIngredient1}`
+    mealIngredient2.innerText = `${meal.strIngredient2}`
+    mealIngredient3.innerText = `${meal.strIngredient3}`
+    mealIngredient4.innerText = `${meal.strIngredient4}`
+    mealIngredient5.innerText = `${meal.strIngredient5}`
+    mealIngredient6.innerText = `${meal.strIngredient6}`
+    mealIngredient7.innerText = `${meal.strIngredient7}`
+    mealIngredient8.innerText = `${meal.strIngredient8}`
+    mealIngredient9.innerText = `${meal.strIngredient9}`
+    mealIngredient10.innerText = `${meal.strIngredient10}`
     console.log(meal);
 }
