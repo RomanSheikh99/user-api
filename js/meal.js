@@ -8,27 +8,43 @@ const loadMeals = () => {
 loadMeals();
 
 const displayAllMeals = meals => {
+    console.log(meals);
     let allMeals = meals.meals;
     let mealsContainer = document.getElementById('meals-container');
+    let nullSearchText = document.getElementById('search-box');
+    let text = nullSearchText.value;
     mealsContainer.textContent = '';
-    allMeals.forEach(meal => {
-        let mealDisc = meal.strInstructions
-        let mealDiv = document.createElement('div');
-        mealDiv.classList.add('col');
-        mealDiv.innerHTML = `
-            <div class="card h-100">
-                <img src="${meal.strMealThumb}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">${meal.strMeal}</h5>
-                    <p class="card-text">${mealDisc.slice(0, 125)}</p>
-                    <button class="btn btn-outline-warning fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="displayMealInfo('${meal.strMeal}')">Learn More</button>
-                </div>
+    if(allMeals == null){
+        mealsContainer.innerHTML = `
+            <div class="col text-center my-3 fs-6 "><h1 cl>😭</h1</div>
+            <div class="col-12">
+                <h2 class="text-center fw-bold my-3 text-danger">${text} Not Found</h2>
             </div>
+            <div class="col text-center my-3 fs-6">😭</div>
         `
-        mealsContainer.appendChild(mealDiv);
-
-        
-    })
+        nullSearchText.value = ''
+        console.log("kono kiso khuje pai nai");
+    }
+    else{
+        allMeals.forEach(meal => {
+            console.log(meal);
+            let mealDisc = meal.strInstructions
+            let mealDiv = document.createElement('div');
+            mealDiv.classList.add('col');
+            mealDiv.innerHTML = `
+                <div class="card h-100">
+                    <img src="${meal.strMealThumb}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">${meal.strMeal}</h5>
+                        <p class="card-text">${mealDisc.slice(0, 125)}</p>
+                        <button class="btn btn-outline-warning fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="displayMealInfo('${meal.strMeal}')">Learn More</button>
+                    </div>
+                </div>
+            `
+            nullSearchText.value = ''
+            mealsContainer.appendChild(mealDiv);
+        })
+    } 
 }
 
 
@@ -91,7 +107,6 @@ document.getElementById('search-btn').addEventListener('click', function(){
     let searchText = searchBox.value.toLowerCase();
     // console.log(searchText);
     loadMealsByName(searchText)
-    searchBox.value = '';
 })
 
 const loadMealsByName = mealName => {
