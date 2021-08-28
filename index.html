@@ -94,11 +94,6 @@
 
    <!-- modal section -->
 
-   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" >
-    Launch demo modal
-  </button>
-  
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
@@ -108,11 +103,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-         
+         <img id="meal-modal-img" class="img-fluid" src="" alt="">
+         <h4 id="meal-area" class="my-2"></h4>
         </div>
         <div class="modal-footer d-flex justify-content-around">
           <button type="button" class="btn btn-outline-warning fw-bolder" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-warning fw-bolder">Save changes</button>
+          <a id="meal-tutorial" href="" target="_blank">
+            <button type="button" class="btn btn-outline-warning fw-bolder">See Tutorial</button>
+          </a>
         </div>
       </div>
     </div>

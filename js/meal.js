@@ -32,7 +32,6 @@ const displayAllMeals = meals => {
 
 
 function displayMealInfo(name){
-    // console.log(name);
     let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
     fetch(url)
     .then(ref => ref.json())
@@ -40,9 +39,19 @@ function displayMealInfo(name){
 }
 
 function displayMealDetails(meals){
-    // console.log(meals.meals);
     let meal = meals.meals[0];
     let mealTitle = document.getElementById('meal-title');
-    // mealTitle.innerText = `${meal}`
-    console.log(meal.strMeal);
+    mealTitle.innerText = `${meal.strMeal}`
+    let modalIMG = document.getElementById('meal-modal-img');
+    modalIMG.setAttribute('src',`${meal.strMealThumb}`)
+    let mealTutorial = document.getElementById('meal-tutorial');
+    mealTutorial.setAttribute('href',`${meal.strYoutube}`)
+    let mealArea = document.getElementById('meal-area');
+    mealArea.innerHTML = `
+       <span cl>${meal.strMeal}</span>
+        is an 
+        <span class="text-warning">${meal.strArea}</span>
+        Food.
+    `
+    console.log(meal);
 }
