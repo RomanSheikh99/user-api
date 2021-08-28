@@ -16,11 +16,11 @@ const displayAllMeals = meals => {
     mealsContainer.textContent = '';
     if(allMeals == null){
         mealsContainer.innerHTML = `
-            <div class="col text-center my-3 fs-6 "><h1 cl>😭</h1</div>
-            <div class="col-12">
+            <div class="col"><h1 class="text-center fw-bold my-3 fs-1">😭</h1></div>
+            <div class="col">
                 <h2 class="text-center fw-bold my-3 text-danger">${text} Not Found</h2>
             </div>
-            <div class="col text-center my-3 fs-6">😭</div>
+            <div class="col"><h1 class="text-center fw-bold my-3 fs-1">😭</h1></div>
         `
         nullSearchText.value = ''
         console.log("kono kiso khuje pai nai");
@@ -104,9 +104,14 @@ function displayMealDetails(meals){
 
 document.getElementById('search-btn').addEventListener('click', function(){
     let searchBox = document.getElementById('search-box');
-    let searchText = searchBox.value.toLowerCase();
-    // console.log(searchText);
-    loadMealsByName(searchText)
+    if(searchBox.value == ''){
+        searchBox.setAttribute('placeholder','type something to search')
+    }
+    else{
+        searchBox.setAttribute('placeholder','Search Meal by Name')
+        let searchText = searchBox.value.toLowerCase();
+        loadMealsByName(searchText)
+    }
 })
 
 const loadMealsByName = mealName => {
