@@ -12,6 +12,12 @@
  }
  
 
+const loader = `
+
+`
+
+
+
  const displayUser = data => {
     let user = data.results
     let userImg = document.getElementById('user-img');

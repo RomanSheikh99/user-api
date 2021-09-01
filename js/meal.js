@@ -8,7 +8,7 @@ const loadMeals = () => {
 loadMeals();
 
 const displayAllMeals = meals => {
-    console.log(meals);
+    // console.log(meals);
     let allMeals = meals.meals;
     let mealsContainer = document.getElementById('meals-container');
     let nullSearchText = document.getElementById('search-box');
@@ -27,7 +27,7 @@ const displayAllMeals = meals => {
     }
     else{
         allMeals.forEach(meal => {
-            console.log(meal);
+            // console.log(meal);
             let mealDisc = meal.strInstructions
             let mealDiv = document.createElement('div');
             mealDiv.classList.add('col');
